@@ -7,6 +7,8 @@ public class Solution {
             set.add(t.charAt(i));
         }
         String res = "";
+        // get the first string meeting the requirement
+        // in order to get the initial window size j-i
         int i = 0, j = 0, n = s.length();
         while(j < n && map.size() < set.size()){
             char c = s.charAt(j);
@@ -37,10 +39,11 @@ public class Solution {
             }
         }
         res = s.substring(i, j);
-        // System.out.println(res);
         i++;
         j++;
+        // slide the window
         while(j < n){
+            // update the map
             char a = s.charAt(i-1);
             char b = s.charAt(j);
             if(set.contains(a)){
@@ -59,6 +62,8 @@ public class Solution {
                     map.put(b, 1);
                 }
             }
+            // if map.size() < set.size(), slide to next
+            // if not, updata the minimum string
             if(map.size() < set.size()){
                 i++;
                 j++;
