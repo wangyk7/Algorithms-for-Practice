@@ -1,4 +1,5 @@
 # algorithms
 
 The alogorithms implemented will be saved in this file.
-This is a shadow person!
+1) general data structure;
+2) algorithm test from my interview.
